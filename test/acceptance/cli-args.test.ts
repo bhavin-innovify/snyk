@@ -520,7 +520,7 @@ test(
     t.plan(3);
 
     exec(
-      `node ${main} container test snyk/runtime-fixtures:alpine-windows --file=test/acceptance/fixtures/docker/Dockerfile --sarif-file-output=snyk-direct-sarif-test-output.json --json-file-output=snyk-direct-json-test-output.json`,
+      `node ${main} container test hello-world --file=test/acceptance/fixtures/docker/Dockerfile --sarif-file-output=snyk-direct-sarif-test-output.json --json-file-output=snyk-direct-json-test-output.json`,
       (err, stdout) => {
         if (err) {
           throw err;
@@ -580,7 +580,7 @@ test(
     t.plan(2);
 
     exec(
-      `node ${main} container test snyk/runtime-fixtures:alpine-windows --sarif --file=test/acceptance/fixtures/docker/Dockerfile --sarif-file-output=snyk-direct-sarif-test-output.json`,
+      `node ${main} container test hello-world --sarif --file=test/acceptance/fixtures/docker/Dockerfile --sarif-file-output=snyk-direct-sarif-test-output.json`,
       (err, stdout) => {
         if (err) {
           throw err;
@@ -625,7 +625,7 @@ test('`test --sarif-file-output without vulns`', { skip: islinux }, (t) => {
   t.plan(1);
 
   exec(
-    `node ${main} container test snyk/runtime-fixtures:alpine-windows --file=test/acceptance/fixtures/docker/Dockerfile --sarif-file-output=snyk-direct-sarif-test-output.json`,
+    `node ${main} container test hello-world --file=test/acceptance/fixtures/docker/Dockerfile --sarif-file-output=snyk-direct-sarif-test-output.json`,
     (err) => {
       if (err) {
         throw err;
